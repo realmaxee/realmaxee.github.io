@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Circular Calendar</title>
+	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-pie.min.js"></script>
+</head>
+<body>
+	<div class='container'>
+		
+	</div>
+	<script type="text/javascript">
+		var year = [
+			{x: "January", value: 31},
+			{x: "February", value: 28},
+			{x: "March", value: 31},
+			{x: "April", value: 30},
+			{x: "May", value: 31},
+			{x: "June", value: 30},
+			{x: "July", value: 31},
+			{x: "August", value: 31},
+			{x: "September", value: 30},
+			{x: "October", value: 31},
+			{x: "November", value: 30},
+			{x: "December", value: 31},
+		];
+
+		var chart = anychart.pie();
+		chart.title("2021");
+		chart.data(year);
+
+		chart.container("container");
+		chart.draw();
+	</script>
+</body>
+</html>
