@@ -6,22 +6,44 @@
 	<title></title>
 	<script src='clicker.js' defer></script>
 	<link rel="stylesheet" type="text/css" href="clicker.css">
+	<link href='https://fonts.googleapis.com/css?family=Press Start 2P' rel='stylesheet'>
 </head>
 <body>
-
+<div class='container'>
+	<h1>Bridge Clicker</h1>
+	<p>Definitely not a rip off of coockie clicker!</p>
+</div>
 <div class='container'>
 	<div class='game'>
 		<img src="bg.png" id='bgImg'>
-		<div class="bridge" onclick="bridgeClick();">
+		<div class="bridge" onclick="bridgeClick(1);">
 			<img src="b1back.png" id='bridgeBack'>
 			<img src="road.png" id='road'>
 			<img src="b1front.png" id='bridgeFront'>
 		</div>
 	</div>
-	<div class='stats'>
+	<div class='stats vertical-flex'>
 		<span id='money'></span>
-		
+		<span id='tollBoothCount'></span>
+		<span id='adCount'></span>
+		<span id='console'></span>
 
+	</div>
+
+	<div class='store vertical-flex'>
+		<div>
+			<h2>Toll Booth: $<span id='tollBoothPrice'></span></h2>
+			<button onclick="buyTollBooth();">Buy</button>
+			<button onclick="buyAllTollBooths();">Buy All</button>
+		</div>
+		<div>
+			<h2>Advertising: $<span id='adPrice'></span></h2>
+			<button onclick="buyAds();">Buy</button>
+			<button onclick="buyAllAds();">Buy All</button>
+		</div>
+		<div>
+			
+		</div>
 	</div>
 	
 

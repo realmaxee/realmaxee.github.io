@@ -1,3 +1,7 @@
+body {
+	font-family: 'Press Start 2P';
+}
+
 .container {
 	width: 80%;
 	padding: 0%;
@@ -8,18 +12,34 @@
     justify-content: flex-start;
 }
 
+.vertical-flex {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
 .game {
 	position: relative;
 	width: 50%;
+	image-rendering: pixelated;
 }
 
 .stats {
-	width: 50%;
+	width: 25%;
 	padding: 30px;
 }
 
+.store {
+	width: 25%;
+}
+
+.bridge {
+	width: 100%;
+}
+
 .bridge:active {
-	box-shadow:3px 3px black;
+	width: 98%;
+	padding: 1%;
 }
 
 #bgImg {
@@ -31,16 +51,16 @@
 #bridgeBack {
 	top: 0px;
 	position: absolute;
-	width: 100%}
+	width: inherit;}
 
 #road {
 	top: 0px;
 	position: absolute;
-	width: 100%;
+	width: inherit;
 }
 
 #bridgeFront {
 	top: 0px;
 	position: absolute;
-	width: 100%;
+	width: inherit;
 }
