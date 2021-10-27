@@ -1,0 +1,46 @@
+.container {
+	width: 80%;
+	padding: 0%;
+	margin: 10%;
+	border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.game {
+	position: relative;
+	width: 50%;
+}
+
+.stats {
+	width: 50%;
+	padding: 30px;
+}
+
+.bridge:active {
+	box-shadow:3px 3px black;
+}
+
+#bgImg {
+	top: 0px;
+	position: absolute;
+	width: 100%;
+}
+
+#bridgeBack {
+	top: 0px;
+	position: absolute;
+	width: 100%}
+
+#road {
+	top: 0px;
+	position: absolute;
+	width: 100%;
+}
+
+#bridgeFront {
+	top: 0px;
+	position: absolute;
+	width: 100%;
+}

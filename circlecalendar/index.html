@@ -9,36 +9,38 @@
     	.container {
     		width: 90vw;
     		height: 90vw;
-    		
+
     	}
     </style>
 </head>
 <body>
-	<div class='container'>
+	<div class='container' id='container'>
 		
 	</div>
 	<script type="text/javascript">
-		var year = [
-			{x: "January", value: 31},
-			{x: "February", value: 28},
-			{x: "March", value: 31},
-			{x: "April", value: 30},
-			{x: "May", value: 31},
-			{x: "June", value: 30},
-			{x: "July", value: 31},
-			{x: "August", value: 31},
-			{x: "September", value: 30},
-			{x: "October", value: 31},
-			{x: "November", value: 30},
-			{x: "December", value: 31},
-		];
+		anychart.onDocumentReady(function() {
+			var data = [
+				{x: "January", value: 31},
+				{x: "February", value: 28},
+				{x: "March", value: 31},
+				{x: "April", value: 30},
+				{x: "May", value: 31},
+				{x: "June", value: 30},
+				{x: "July", value: 31},
+				{x: "August", value: 31},
+				{x: "September", value: 30},
+				{x: "October", value: 31},
+				{x: "November", value: 30},
+				{x: "December", value: 31},
+			];
 
-		var chart = anychart.pie();
-		chart.title("2021");
-		chart.data(year);
+			var chart = anychart.pie();
+			chart.title("2021");
+			chart.data(data);
 
-		chart.container("container");
-		chart.draw();
+			chart.container("container");
+			chart.draw();
+		});
 	</script>
 </body>
 </html>
