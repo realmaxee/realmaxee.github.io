@@ -17,15 +17,17 @@
 	<div class='game'>
 		<img src="bg.png" id='bgImg'>
 		<div class="bridge" onclick="bridgeClick(1);">
-			<img src="b1back.png" id='bridgeBack'>
 			<img src="road.png" id='road'>
+			<img src="b1back.png" id='bridgeBack'>
 			<img src="b1front.png" id='bridgeFront'>
 		</div>
 	</div>
 	<div class='stats vertical-flex'>
 		<span id='money'></span>
 		<span id='tollBoothCount'></span>
+		<span id='doubleRoadCount'></span>
 		<span id='adCount'></span>
+		<span id='monopolyCount'></span>
 		<span id='console'></span>
 
 	</div>
@@ -33,13 +35,23 @@
 	<div class='store vertical-flex'>
 		<div>
 			<h2>Toll Booth: $<span id='tollBoothPrice'></span></h2>
-			<button onclick="buyTollBooth();">Buy</button>
-			<button onclick="buyAllTollBooths();">Buy All</button>
+			<button onclick="buyMultiplier(tollBooth, false);">Buy</button>
+			<button onclick="buyMultiplier(tollBooth, true);">Buy All</button>
+		</div>
+		<div>
+			<h2>Double Road: $<span id='doubleRoadPrice'></span></h2>
+			<button onclick="buyMultiplier(doubleRoad, false);">Buy</button>
+			<button onclick="buyMultiplier(doubleRoad, true);">Buy All</button>
 		</div>
 		<div>
 			<h2>Advertising: $<span id='adPrice'></span></h2>
-			<button onclick="buyAds();">Buy</button>
-			<button onclick="buyAllAds();">Buy All</button>
+			<button onclick="buyCPS(ad, false);">Buy</button>
+			<button onclick="buyCPS(ad, true);">Buy All</button>
+		</div>
+		<div>
+			<h2>Monopoly: $<span id='monopolyPrice'></span></h2>
+			<button onclick="buyCPS(monopoly, false);">Buy</button>
+			<button onclick="buyCPS(monopoly, true);">Buy All</button>
 		</div>
 		<div>
 			

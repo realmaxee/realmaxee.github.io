@@ -1,18 +1,32 @@
-var money = 0.00;
+var money = 1000.00;
 var multiplier = 1;
 var clicksPerSecond = 0;
 
-/*stats*/
+/*stats
 var tollBooths = 0;
 var tollBoothPrice = 25;
 
 var ads = 0;
 var adPrice = 900;
+*/
+/*
+	Objects for all the different buffs you can buy
+	iPrice = initial price
+	cPrice = current price
+	amount = how many there are
+	multiplier = how much to add
+
+*/
+var tollBooth = {iPrice:25, cPrice:25, amount:0, multiplier:0.7};
+var doubleRoad = {iPrice:10000, cPrice:10000, amount:0, multiplier:69};
+
+var ad = {iPrice:900, cPrice:900, amount:0, cps:1};
+var monopoly = {iPrice:10000000000, cPrice:10000000000, amount:0, cps:69420};
 
 
 updateMoney();
-updateTollBooths();
-updateAds();
+updateStats();
+updateStore();
 
 
 
@@ -27,7 +41,68 @@ function updateMoney() {
 
 }
 
-function buyTollBooth() {
+function buyMultiplier(type, maxAmount) {
+	if (maxAmount == false) {
+		if (money >= type.cPrice) {
+			money = money - type.cPrice;
+			multiplier = multiplier + type.multiplier;
+			type.amount++;
+			type.cPrice = type.iPrice * Math.pow(1.1,type.amount);
+		} else {
+			document.getElementById('console').innerHTML = 'You do not have enough money.';
+		}
+	} else {
+		while (money >= type.cPrice) {
+			money = money - type.cPrice;
+			multiplier = multiplier + type.multiplier;
+			type.amount++;
+			type.cPrice = type.iPrice * Math.pow(1.1,type.amount);
+		}
+	}
+	updateStats();
+	updateStore();
+	updateMoney();
+}
+
+function buyCPS(type, maxAmount) {
+	if (maxAmount == false) {
+		if (money >= type.cPrice) {
+			money = money - type.cPrice;
+			clicksPerSecond = clicksPerSecond + type.cps;
+			type.amount++;
+			type.cPrice = type.iPrice * Math.pow(1.1,type.amount);
+		} else {
+			document.getElementById('console').innerHTML = 'You do not have enough money.';
+		}
+	} else {
+		while (money >= type.cPrice) {
+			money = money - type.cPrice;
+			clicksPerSecond = clicksPerSecond + type.cps;
+			type.amount++;
+			type.cPrice = type.iPrice * Math.pow(1.1,type.amount);
+		}
+	}
+	updateStats();
+	updateStore();
+	updateMoney();
+}
+
+function updateStats() {
+	document.getElementById('tollBoothCount').innerHTML = tollBooth.amount + ' Toll Booths';
+	document.getElementById('doubleRoadCount').innerHTML = doubleRoad.amount + ' Roads Doubled';
+	document.getElementById('adCount').innerHTML = ad.amount + ' Ads';
+	document.getElementById('monopolyCount').innerHTML = monopoly.amount + ' Monopolies';
+}
+
+function updateStore() {
+	document.getElementById('tollBoothPrice').innerHTML = tollBooth.cPrice;
+	document.getElementById('doubleRoadPrice').innerHTML = doubleRoad.cPrice;
+	document.getElementById('adPrice').innerHTML = ad.cPrice;
+	document.getElementById('monopolyPrice').innerHTML = monopoly.cPrice;
+
+}
+
+/*function buyTollBooth() {
 	if (money >= tollBoothPrice) {
 		money = money - tollBoothPrice;
 		multiplier++;
@@ -51,9 +126,7 @@ function buyAllTollBooths() {
 
 function updateTollBooths(amount) {
 		updateMoney();
-		document.getElementById('tollBoothPrice').innerHTML = tollBoothPrice;
 		document.getElementById('console').innerHTML = 'Bought ' + amount + ' Toll Booth(s)';
-		document.getElementById('tollBoothCount').innerHTML = tollBooths + ' Toll Booths';
 }
 
 function buyAds() {
@@ -80,11 +153,9 @@ function buyAllAds() {
 
 function updateAds(amount) {
 		updateMoney();
-		document.getElementById('adPrice').innerHTML = adPrice;
 		document.getElementById('console').innerHTML = 'Bought ' + amount + ' Ad(s)';
-		document.getElementById('adCount').innerHTML = ads + ' Ads';
 }
-
+*/
 function autoClick() {
 	bridgeClick(clicksPerSecond/100);
 }
