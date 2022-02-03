@@ -8,22 +8,27 @@
 	<script type="text/javascript">
 
 		function toggleMenu() {
-			if ($(".nav-button").text() == "X") {
+			if ($(".nav-button").text() == "x") {
 				document.getElementById("nav-container").style.width = "0px";
 				$(".nav").fadeOut(50);
 				console.log('hid nav');
-				$('.nav-button').text('=');
+				$('.nav-button').text('≡');
 			} else {
 				document.getElementById("nav-container").style.width = "1000px";
 				//document.getElementByClassName("nav").style.display = "block";
 				setTimeout(() => {  $(".nav").fadeIn(50); }, 250);
 				console.log('showing nav');
-				$('.nav-button').text('X');
+				$('.nav-button').text('x');
 			}
 		}
 
 	</script>
+	<style type="text/css">
+		.content {
+			margin-top: 50px;
+		}
 
+	</style>
 </head>
 <body>
 	<div id='nav-container'>
@@ -38,12 +43,18 @@
 	</div>
 
 	<div class='main-container'>
-		<button class='nav-button' onclick="toggleMenu()">X</button>
+		<button class='nav-button' onclick="toggleMenu()">x</button>
 		<div id='about-me' class='content'>
 			<h1>About me</h1>
 			<p>I am currently a full time student attending UVIC for computer science. My programming hobby started out when I was 12, when I took a summer course on making websites with HTML. I have since learned php, python, javscript, and Java. I've dabbled a bit in using swift. Currently I am focusing on the web developpement aspect of computer science, but hopefully one day I will build applications.</p>
 		</div>
-		<div class='content'>
+
+		<div id='hobbies' class='content'>
+			<h1>Other Hobbies and Interests</h1>
+			<p>My other hobbies include photography and videography. </p>
+		</div>
+
+		<div id='projects' class='content'>
 			<h1>Max K's projects and other things</h1>
 			<a href="dogetopia/">dogetopia</a><br>
 			<a href="circlecalendar/">Circular Calendar</a><br>

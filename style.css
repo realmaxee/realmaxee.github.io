@@ -10,12 +10,19 @@ body {
 	background-size: cover;
 }
 
+a {
+	text-decoration: none;
+	color: black;
+}
+
 h1 {
 	font-family: "Verdana";
 }
 
 .nav-button {
 	background-color: rgba(0,0,0,0.0);
+	border: none;
+	font-size: 50px;
 }
 
 .content {
@@ -30,15 +37,18 @@ h1 {
 	visibility: visible;
 	color: white;
 	width: 1000px;
-	height: 100vh;
+	min-height: 100vh;
+	height: 100%;
 	/*padding: 15px;*/
 	transition: 500ms linear;
 	background-image:  url("navbg.jpg");
+	box-shadow: 1px 2px 3px rgba(220,220,220,.5);
 }
 
 .nav {
 	margin: 20px;
 	overflow: hidden;
+	/*position: fixed;*/
 }
 
 .nav li a {
@@ -50,7 +60,6 @@ h1 {
 .nav li {
 	list-style: none;
 }
-
 
 .main-container {
 	padding: 40px;
